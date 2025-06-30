@@ -1,0 +1,22 @@
+{
+  "AlarmName": "HighCPUUtilization-EC2",
+  "AlarmDescription": "Alarm when EC2 CPU exceeds 80%",
+  "ActionsEnabled": true,
+  "OKActions": [],
+  "AlarmActions": [
+    "arn:aws:sns:us-east-1:123456789012:NotifyMe"
+  ],
+  "MetricName": "CPUUtilization",
+  "Namespace": "AWS/EC2",
+  "Statistic": "Average",
+  "Dimensions": [
+    {
+      "Name": "InstanceId",
+      "Value": "i-0123456789abcdef0"
+    }
+  ],
+  "Period": 300,
+  "EvaluationPeriods": 2,
+  "Threshold": 80.0,
+  "ComparisonOperator": "GreaterThanThreshold"
+}
