@@ -1,0 +1,12 @@
+# Sample DNS TXT Records for Email Authentication
+
+# SPF Record (Sender Policy Framework)
+v=spf1 include:_spf.google.com include:mailgun.org ~all
+
+# DKIM Record (DomainKeys Identified Mail)
+Name: default._domainkey
+Value: v=DKIM1; k=rsa; p=MIGfMA0GCSqGSIb3DQEBA...AB
+
+# DMARC Record (Domain-based Message Authentication)
+Name: _dmarc
+Value: v=DMARC1; p=quarantine; rua=mailto:dmarc-reports@example.com; ruf=mailto:forensic@example.com; sp=none; aspf=r; adkim=r
